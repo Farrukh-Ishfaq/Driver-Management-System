@@ -279,7 +279,7 @@
     <section id="list" class="section" style="display:none">
       <h2>Driver/Operator List</h2>
       <div class="toolbar card">
-        <input id="search" placeholder="Search" oninput="applyFilters()" />
+        <input id="" placeholder="" oninput="applyFilters()" />
         <select id="fDesignation" onchange="applyFilters()">
           <option value="">All Designations</option>
           <option>Heavy Duty Driver</option>
@@ -1195,7 +1195,7 @@ function applyFilters(resetPage = true){
   const fVen = $('#fVendor').value;
 
   state.filtered = state.drivers.filter(d=>{
-    const text = `${d.empId||''} ${d.name||''} ${d.serial||''} ${d.touchId||''} ${d.contact||''}`.toLowerCase();
+    const text = `${d.empId||''} ${d.name||''} ${d.serial||''} ${d.touchId||''} ${d.contact||''}${d.remarks||''}`.toLowerCase();
     const okQ = !q || text.includes(q);
     const okD = !fDes || d.designation===fDes;
     const okS = !fSta || d.status===fSta;
@@ -1521,3 +1521,4 @@ function onLoad(){
 }
 window.addEventListener('load', onLoad);
 </script> 
+
